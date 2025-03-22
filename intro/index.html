@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>招财电竞 - 三角洲行动陪玩服务</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background-color: #1a2634;
+            background-image: linear-gradient(#1a2634, #2c3e50);
+            color: #e6e6e6;
+            line-height: 1.6;
+            background-attachment: fixed;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" fill="%23ffffff" opacity="0.03"><path d="M10 10L90 10L90 90L10 90Z"/></svg>');
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(30, 45, 60, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border: 2px solid #e6b800;
+            position: relative;
+            overflow: hidden;
+            background-image: linear-gradient(rgba(30, 45, 60, 0.9), rgba(20, 30, 40, 0.9));
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #2c3e50;
+            background-image: linear-gradient(to right, #2c3e50, #4a6baf, #2c3e50);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #e6b800;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .header h1 {
+            color: #e6b800;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(230, 184, 0, 0.5), 0 0 20px rgba(230, 184, 0, 0.3);
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .header h2 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .header::before, .header::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: 20px;
+        }
+
+
+
+        .section {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #2a3b4d;
+            border-radius: 10px;
+            border: 2px solid #e6b800;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .section h3 {
+            color: #e6b800;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-align: center;
+            padding: 8px 0;
+            background-color: #1a2634;
+            background-image: linear-gradient(to right, #1a2634, #2c3e50, #1a2634);
+            border-radius: 8px;
+            border: 1px solid #e6b800;
+            text-shadow: 0 0 5px rgba(230, 184, 0, 0.5);
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .section h4 {
+            color: #e6b800;
+            font-size: 1.1rem;
+            margin: 15px 0 10px;
+            padding-left: 10px;
+            border-left: 4px solid #e6b800;
+            text-shadow: 0 0 3px rgba(230, 184, 0, 0.3);
+        }
+
+        .price-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .price-item {
+            padding: 10px;
+            background-color: #1a2634;
+            border-radius: 8px;
+            border: 1px solid #e6b800;
+            text-align: center;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .price-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(230, 184, 0, 0.3);
+            background-color: #2c3e50;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .price-table th, .price-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #e6b800;
+        }
+
+        .price-table th {
+            background-color: #1a2634;
+            color: #e6b800;
+            text-shadow: 0 0 3px rgba(230, 184, 0, 0.3);
+        }
+
+        .price-table tr:nth-child(even) {
+            background-color: #2a3b4d;
+        }
+
+        .price-table tr:nth-child(odd) {
+            background-color: #1a2634;
+        }
+
+        .price-table tr:hover {
+            background-color: #2c3e50;
+        }
+
+        .rules {
+            padding: 15px;
+            background-color: #1a2634;
+            border-radius: 8px;
+            border: 1px solid #e6b800;
+            margin-top: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .rules::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="%23e6b800" opacity="0.05"><path d="M2 2L18 2L18 18L2 18Z"/></svg>');
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .rules ol {
+            padding-left: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .rules li {
+            margin-bottom: 5px;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #2c3e50;
+            background-image: linear-gradient(to right, #2c3e50, #4a6baf, #2c3e50);
+            border-radius: 10px;
+            border: 2px solid #e6b800;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-item {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .contact-item h4 {
+            color: #e6b800;
+            margin-bottom: 10px;
+            text-shadow: 0 0 5px rgba(230, 184, 0, 0.5);
+        }
+
+
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            border: 3px solid #e6b800;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(230, 184, 0, 0.5);
+            position: relative;
+        }
+
+        .qr-code::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 0;
+        }
+
+        .qq-number {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e6b800;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #1a2634;
+            border-radius: 5px;
+            border: 1px solid #e6b800;
+            display: inline-block;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2), 0 0 10px rgba(230, 184, 0, 0.2);
+            text-shadow: 0 0 5px rgba(230, 184, 0, 0.3);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .qq-number:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), 0 0 15px rgba(230, 184, 0, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            color: #e6b800;
+            font-size: 0.9rem;
+            text-shadow: 0 0 3px rgba(230, 184, 0, 0.3);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header h2 {
+                font-size: 1.3rem;
+            }
+
+            .header::before, .header::after {
+                width: 40px;
+                height: 40px;
+            }
+
+            .price-list {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .header h2 {
+                font-size: 1.1rem;
+            }
+
+            .header::before, .header::after {
+                width: 30px;
+                height: 30px;
+                top: 15px;
+            }
+
+            .section h3 {
+                font-size: 1.2rem;
+            }
+
+            .qr-code {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        /* 装饰元素 */
+        .decoration {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            filter: drop-shadow(0 0 5px rgba(230, 184, 0, 0.5));
+            animation: pulse 3s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            100% { transform: scale(1.1); opacity: 0.9; }
+        }
+
+        .decoration.top-left {
+            top: 10px;
+            left: 10px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23e6b800"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
+        }
+
+        .decoration.top-right {
+            top: 10px;
+            right: 10px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23e6b800"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
+            animation-delay: 0.5s;
+        }
+
+        .decoration.bottom-left {
+            bottom: 10px;
+            left: 10px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23e6b800"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
+            animation-delay: 1s;
+        }
+
+        .decoration.bottom-right {
+            bottom: 10px;
+            right: 10px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23e6b800"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
+            animation-delay: 1.5s;
+        }
+
+        /* 游戏元素样式 */
+        .game-icon {
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 5px;
+        }
+
+        .game-icon-small {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 3px;
+        }
+
+        .game-icon-large {
+            width: 60px;
+            height: 60px;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 8px;
+        }
+
+        .game-header-decoration {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .game-header-decoration.left {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .game-header-decoration.right {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .section-icon {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: 10px;
+            left: 10px;
+        }
+
+        .price-item-with-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-background-element {
+            position: absolute;
+            opacity: 0.15;
+            z-index: -1;
+            filter: drop-shadow(0 0 10px rgba(230, 184, 0, 0.3));
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        .game-background-element.top {
+            top: 5%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+        }
+
+        .game-background-element.bottom {
+            bottom: 5%;
+            right: 10%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="decoration top-left"></div>
+    <div class="decoration top-right"></div>
+    <div class="decoration bottom-left"></div>
+    <div class="decoration bottom-right"></div>
+
+    <header class="header">
+        <div class="game-header-decoration left decoration">
+            <img src="images/star.svg" alt="战术头盔" width="50" height="50" style="filter: invert(79%) sepia(72%) saturate(638%) hue-rotate(359deg) brightness(96%) contrast(94%);">
+        </div>
+        <h1>招财电竞</h1>
+        <h2>三角洲行动 专业陪玩服务</h2>
+        <div class="game-header-decoration right decoration">
+            <img src="images/star.svg" alt="武器" width="50" height="50" style="filter: invert(79%) sepia(72%) saturate(638%) hue-rotate(359deg) brightness(96%) contrast(94%);">
+        </div>
+    </header>
+
+    <section class="section">
+        <!-- <div class="section-icon">
+            <img src="images/mission_target.svg" alt="任务目标" width="30" height="30">
+        </div> -->
+        <h3>服务内容</h3>
+        <p><img src="images/tactical_backpack.svg" alt="战术背包" class="game-icon-small"> 游戏护航，陪玩，代肝，3×3保险箱，各部门任务帮扶</p>
+        <p><img src="images/sniper_rifle.svg" alt="狙击枪" class="game-icon-small"> 服务范围：双端三角洲（刚刚起步，以后会逐步添加）</p>
+        <div class="game-background-element top">
+            <img src="images/mission_target.svg" alt="任务目标" width="80" height="80">
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-icon">
+            <!-- <img src="images/game_money.svg" alt="游戏货币" width="30" height="30"> -->
+        </div>
+        <h3>价目表</h3>
+
+        <h4><!--<img src="images/tactical_helmet.svg" alt="战术头盔" class="game-icon-small">--> 护航</h4>
+        <div class="price-list">
+            <div class="price-item">48r保108w</div>
+            <div class="price-item">68r保158w</div>
+            <div class="price-item">88r保218w</div>
+            <div class="price-item">128r保328w</div>
+            <div class="price-item">158r保418w (赠语聊半小时哦🥳）</div>
+            <div class="price-item">298r保888w （金牌打手选择权，语聊8折）</div>
+        </div>
+
+        <h4><!--<img src="images/weapon_rifle.svg" alt="武器" class="game-icon-small">--> 陪玩</h4>
+        <table class="price-table">
+            <tr>
+                <th></th>
+                <th>娱乐</th>
+                <th>技术</th>
+            </tr>
+            <tr>
+                <td>普通</td>
+                <td>48r/H</td>
+                <td>58r/H</td>
+            </tr>
+            <tr>
+                <td>机密</td>
+                <td>58r/H</td>
+                <td>68r/H</td>
+            </tr>
+            <tr>
+                <td>绝密</td>
+                <td>78r/H</td>
+                <td>88r/H</td>
+            </tr>
+            <tr>
+                <td>战场</td>
+                <td>48r/H</td>
+                <td>50r/H</td>
+            </tr>
+            <tr>
+                <td>包夜</td>
+                <td>308r/H</td>
+                <td>368r/H</td>
+            </tr>
+        </table>
+
+        <h4><!--<img src="images/sniper_rifle.svg" alt="狙击枪" class="game-icon-small">--> 代肝</h4>
+        <div class="price-list">
+            <div class="price-item">8r保88w</div>
+            <div class="price-item">28r保328w</div>
+            <div class="price-item">58r保698w</div>
+            <div class="price-item">88r保1100w</div>
+            <div class="price-item">接长期价格私聊可优惠</div>
+        </div>
+
+        <h4><!--<img src="images/mission_target.svg" alt="任务目标" class="game-icon-small">--> 3×3保险箱</h4>
+        <div class="price-list">
+            <div class="price-item">全任务1000r</div>
+            <div class="price-item">金枪客系列180r</div>
+            <div class="price-item">狙精系列160r</div>
+            <div class="price-item">收集者系列300r</div>
+            <div class="price-item">失去联系50r</div>
+            <div class="price-item">单个任务收费30r</div>
+        </div>
+
+        <h4><!--<img src="images/game_money.svg" alt="游戏货币" class="game-icon-small">--> 限时体验单</h4>
+        <div class="price-list">
+            <div class="price-item">护航88r保328w</div>
+            <div class="price-item">任意模式娱乐陪48r/h</div>
+            <div class="price-item">代肝58r保1000w</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <!-- <div class="section-icon">
+            <img src="images/tactical_helmet.svg" alt="战术头盔" width="30" height="30">
+        </div> -->
+        <h3>护航规则赔付保障</h3>
+        <div class="rules">
+            <ol>
+                <li>单局未完成目标或老板死亡需补单，小于保底15w则需再保一局</li>
+                <li>老板不听打手指挥乱跑死亡不包赔</li>
+                <li>打手必须给老板提供足量情绪价值，不得辱骂老板，若打手违反规则，可与客服售后投诉举报有奖</li>
+                <li>不出大红不结单</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="section">
+        <!-- <div class="section-icon">
+            <img src="images/weapon_rifle.svg" alt="武器" width="30" height="30">
+        </div> -->
+        <h3>陪玩售后赔付保障</h3>
+        <div class="rules">
+            <ol>
+                <li>陪玩机密炸单一局，需给老板增加保底38w绝密68w</li>
+                <li>下单进局十分钟内若对陪陪不满意可告知客服换人</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="contact-item">
+            <h4>微信联系</h4>
+            <div class="qr-code">
+                <img src="./images/wechat_code.png" alt="微信二维码">
+            </div>
+            <p>扫码添加微信</p>
+        </div>
+
+        <div class="contact-item">
+            <h4>QQ联系</h4>
+            <div class="qq-number">2443714358</div>
+            <p>添加QQ好友</p>
+        </div>
+    </section>
+
+    <div class="game-background-element bottom">
+        <img src="images/sniper_rifle.svg" alt="狙击枪" width="80" height="80">
+    </div>
+    <footer class="footer">
+        <p>© 2025 招财电竞 - 专业三角洲行动陪玩服务</p>
+    </footer>
+</div>
+</body>
+</html>

@@ -16,7 +16,7 @@
             --light: #f8f9fa;
             --accent: #ffd700;
         }
-        
+
         /* 微信二维码模态框样式 */
         .wechat-modal {
             display: none;
@@ -32,12 +32,12 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .wechat-modal.show {
             display: flex;
             opacity: 1;
         }
-        
+
         .wechat-modal-content {
             background: rgba(30, 30, 30, 0.9);
             border-radius: 15px;
@@ -51,18 +51,18 @@
             transform: scale(0.7);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        
+
         .wechat-modal.show .wechat-modal-content {
             transform: scale(1);
         }
-        
+
         .wechat-modal-title {
             color: var(--accent);
             font-size: 1.8rem;
             margin-bottom: 20px;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
-        
+
         .wechat-qrcode {
             max-width: 100%;
             height: auto;
@@ -71,7 +71,7 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        
+
         .wechat-modal-close {
             position: absolute;
             top: 10px;
@@ -84,18 +84,18 @@
             border: none;
             outline: none;
         }
-        
+
         .wechat-modal-close:hover {
             color: var(--primary);
             transform: scale(1.2);
         }
-        
+
         .wechat-modal-text {
             color: var(--light);
             margin-top: 15px;
             font-size: 1.1rem;
         }
-        
+
         .wechat-id {
             display: inline-block;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
@@ -105,7 +105,7 @@
             margin-top: 10px;
             font-weight: bold;
         }
-        
+
         body {
             background-color: var(--dark);
             color: var(--light);
@@ -117,7 +117,7 @@
             background-attachment: fixed;
             position: relative;
         }
-        
+
         body::before {
             content: '';
             position: absolute;
@@ -128,7 +128,7 @@
             background-color: rgba(0, 0, 0, 0.8);
             z-index: -1;
         }
-        
+
         .header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             padding: 2rem 0;
@@ -136,7 +136,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .header::after {
             content: '';
             position: absolute;
@@ -146,7 +146,7 @@
             height: 30%;
             background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
         }
-        
+
         .logo {
             font-size: 3.5rem;
             font-weight: 800;
@@ -154,13 +154,99 @@
             text-shadow: 0 0 10px rgba(255,255,255,0.5);
             margin-bottom: 0;
         }
-        
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .game-title {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .service-title {
+                font-size: 1.5rem;
+            }
+
+            .price-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .wechat-modal-content {
+                padding: 20px;
+                width: 95%;
+            }
+
+            .wechat-modal-title {
+                font-size: 1.5rem;
+            }
+
+            .wechat-modal-text {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .game-title {
+                font-size: 1.8rem;
+                margin: 1.5rem 0;
+            }
+
+            .service-card {
+                padding: 1rem;
+            }
+
+            .service-title {
+                font-size: 1.3rem;
+            }
+
+            .highlight {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .cta-button {
+                width: 80%;
+                max-width: 300px;
+                font-size: 1.1rem;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .footer {
+                text-align: center;
+            }
+        }
+
         .tagline {
             font-size: 1.5rem;
             color: var(--accent);
             text-shadow: 0 0 5px rgba(0,0,0,0.8);
         }
-        
+
         .game-title {
             font-size: 2.5rem;
             font-weight: 700;
@@ -168,7 +254,7 @@
             margin: 2rem 0;
             text-shadow: 0 0 15px rgba(255,215,0,0.7);
         }
-        
+
         .service-card {
             background: rgba(30, 30, 30, 0.8);
             border-radius: 15px;
@@ -178,13 +264,13 @@
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        
+
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.7);
             border-color: var(--accent);
         }
-        
+
         .service-title {
             color: var(--primary);
             font-size: 1.8rem;
@@ -193,7 +279,7 @@
             border-bottom: 2px solid var(--accent);
             padding-bottom: 0.5rem;
         }
-        
+
         .price-item {
             display: flex;
             justify-content: space-between;
@@ -203,17 +289,17 @@
             background: rgba(255,255,255,0.05);
             transition: all 0.2s ease;
         }
-        
+
         .price-item:hover {
             background: rgba(255,255,255,0.1);
             transform: scale(1.02);
         }
-        
+
         .price-tag {
             color: var(--accent);
             font-weight: 700;
         }
-        
+
         .highlight {
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             color: white;
@@ -224,7 +310,7 @@
             margin: 1rem 0;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
-        
+
         .rules {
             background: rgba(20, 20, 20, 0.9);
             padding: 2rem;
@@ -232,20 +318,20 @@
             margin-top: 2rem;
             border-left: 5px solid var(--primary);
         }
-        
+
         .rules h3 {
             color: var(--primary);
             margin-bottom: 1rem;
         }
-        
+
         .rules ol {
             padding-left: 1.5rem;
         }
-        
+
         .rules li {
             margin-bottom: 0.8rem;
         }
-        
+
         .cta-button {
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             color: white;
@@ -254,27 +340,29 @@
             font-size: 1.2rem;
             font-weight: 700;
             border-radius: 50px;
-            margin: 2rem 0;
+            margin: 2rem auto;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            display: block;
         }
-        
+
         .cta-button:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.4);
         }
-        
+
         .footer {
             background: rgba(10, 10, 10, 0.9);
             padding: 2rem 0;
             margin-top: 3rem;
             border-top: 5px solid var(--accent);
+            text-align: center;
         }
-        
+
         .glowing-text {
             animation: glow 2s ease-in-out infinite alternate;
         }
-        
+
         @keyframes glow {
             from {
                 text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--primary), 0 0 20px var(--primary);
@@ -283,43 +371,43 @@
                 text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--primary), 0 0 40px var(--primary);
             }
         }
-        
+
         .table-container {
             overflow-x: auto;
             margin: 1.5rem 0;
         }
-        
+
         .price-table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
         }
-        
+
         .price-table th, .price-table td {
             padding: 0.75rem;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.1);
         }
-        
+
         .price-table th {
             background: rgba(255,255,255,0.1);
             color: var(--accent);
         }
-        
+
         .price-table tr:hover {
             background: rgba(255,255,255,0.05);
         }
-        
+
         .floating {
             animation: floating 3s ease-in-out infinite;
         }
-        
+
         @keyframes floating {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-15px); }
             100% { transform: translateY(0px); }
         }
-        
+
         .particles-js {
             position: absolute;
             width: 100%;
@@ -331,370 +419,370 @@
     </style>
 </head>
 <body>
-    <!-- 粒子效果背景 -->
-    <div id="particles-js" class="particles-js"></div>
+<!-- 粒子效果背景 -->
+<div id="particles-js" class="particles-js"></div>
 
-    <header class="header text-center">
-        <div class="container">
-            <h1 class="logo animate__animated animate__fadeInDown">招财电竞</h1>
-            <p class="tagline animate__animated animate__fadeInUp">专业三角洲行动陪玩服务</p>
+<header class="header text-center">
+    <div class="container">
+        <h1 class="logo animate__animated animate__fadeInDown">招财电竞</h1>
+        <p class="tagline animate__animated animate__fadeInUp">专业三角洲行动陪玩服务</p>
+    </div>
+</header>
+
+<main class="container py-5">
+    <h2 class="game-title text-center glowing-text" data-aos="zoom-in">三角洲行动</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="service-card" data-aos="fade-up">
+                <h3 class="service-title">服务内容</h3>
+                <p class="lead">游戏护航，陪玩，代肝，3×3保险箱，各部门任务帮扶</p>
+                <p>服务范围：双端三角洲（刚刚起步，以后会逐步添加）</p>
+                <div class="highlight floating">限时优惠中！</div>
+            </div>
         </div>
-    </header>
+    </div>
 
-    <main class="container py-5">
-        <h2 class="game-title text-center glowing-text" data-aos="zoom-in">三角洲行动</h2>
-        
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="service-card" data-aos="fade-up">
-                    <h3 class="service-title">服务内容</h3>
-                    <p class="lead">游戏护航，陪玩，代肝，3×3保险箱，各部门任务帮扶</p>
-                    <p>服务范围：双端三角洲（刚刚起步，以后会逐步添加）</p>
-                    <div class="highlight floating">限时优惠中！</div>
+    <div class="row">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+            <div class="service-card">
+                <h3 class="service-title">护航服务</h3>
+                <div class="price-item">
+                    <span>48r</span>
+                    <span class="price-tag">保108w</span>
+                </div>
+                <div class="price-item">
+                    <span>68r</span>
+                    <span class="price-tag">保158w</span>
+                </div>
+                <div class="price-item">
+                    <span>88r</span>
+                    <span class="price-tag">保218w</span>
+                </div>
+                <div class="price-item">
+                    <span>128r</span>
+                    <span class="price-tag">保328w</span>
+                </div>
+                <div class="price-item">
+                    <span>158r</span>
+                    <span class="price-tag">保418w (赠语聊半小时哦🥳）</span>
+                </div>
+                <div class="price-item">
+                    <span>298r</span>
+                    <span class="price-tag">保888w （金牌打手选择权，语聊8折）</span>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                <div class="service-card">
-                    <h3 class="service-title">护航服务</h3>
-                    <div class="price-item">
-                        <span>48r</span>
-                        <span class="price-tag">保108w</span>
-                    </div>
-                    <div class="price-item">
-                        <span>68r</span>
-                        <span class="price-tag">保158w</span>
-                    </div>
-                    <div class="price-item">
-                        <span>88r</span>
-                        <span class="price-tag">保218w</span>
-                    </div>
-                    <div class="price-item">
-                        <span>128r</span>
-                        <span class="price-tag">保328w</span>
-                    </div>
-                    <div class="price-item">
-                        <span>158r</span>
-                        <span class="price-tag">保418w (赠语聊半小时哦🥳）</span>
-                    </div>
-                    <div class="price-item">
-                        <span>298r</span>
-                        <span class="price-tag">保888w （金牌打手选择权，语聊8折）</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-                <div class="service-card">
-                    <h3 class="service-title">陪玩服务</h3>
-                    <div class="table-container">
-                        <table class="price-table">
-                            <thead>
-                                <tr>
-                                    <th>类型</th>
-                                    <th>娱乐</th>
-                                    <th>技术</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>普通</td>
-                                    <td>48r/H</td>
-                                    <td>58r/H</td>
-                                </tr>
-                                <tr>
-                                    <td>机密</td>
-                                    <td>58r/H</td>
-                                    <td>68r/H</td>
-                                </tr>
-                                <tr>
-                                    <td>绝密</td>
-                                    <td>78r/H</td>
-                                    <td>88r/H</td>
-                                </tr>
-                                <tr>
-                                    <td>战场</td>
-                                    <td>48r/H</td>
-                                    <td>50r/H</td>
-                                </tr>
-                                <tr>
-                                    <td>包夜</td>
-                                    <td>308r/H</td>
-                                    <td>368r/H</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="service-card">
+                <h3 class="service-title">陪玩服务</h3>
+                <div class="table-container">
+                    <table class="price-table">
+                        <thead>
+                        <tr>
+                            <th>类型</th>
+                            <th>娱乐</th>
+                            <th>技术</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>普通</td>
+                            <td>48r/H</td>
+                            <td>58r/H</td>
+                        </tr>
+                        <tr>
+                            <td>机密</td>
+                            <td>58r/H</td>
+                            <td>68r/H</td>
+                        </tr>
+                        <tr>
+                            <td>绝密</td>
+                            <td>78r/H</td>
+                            <td>88r/H</td>
+                        </tr>
+                        <tr>
+                            <td>战场</td>
+                            <td>48r/H</td>
+                            <td>50r/H</td>
+                        </tr>
+                        <tr>
+                            <td>包夜</td>
+                            <td>308r/H</td>
+                            <td>368r/H</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-card">
-                    <h3 class="service-title">代肝服务</h3>
-                    <div class="price-item">
-                        <span>8r</span>
-                        <span class="price-tag">保88w</span>
-                    </div>
-                    <div class="price-item">
-                        <span>28r</span>
-                        <span class="price-tag">保328w</span>
-                    </div>
-                    <div class="price-item">
-                        <span>58r</span>
-                        <span class="price-tag">保698w</span>
-                    </div>
-                    <div class="price-item">
-                        <span>88r</span>
-                        <span class="price-tag">保1100w</span>
-                    </div>
-                    <p class="mt-3">接长期价格私聊可优惠</p>
+    <div class="row">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card">
+                <h3 class="service-title">代肝服务</h3>
+                <div class="price-item">
+                    <span>8r</span>
+                    <span class="price-tag">保88w</span>
                 </div>
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="service-card">
-                    <h3 class="service-title">3×3保险箱</h3>
-                    <div class="price-item">
-                        <span>全任务</span>
-                        <span class="price-tag">1000r</span>
-                    </div>
-                    <div class="price-item">
-                        <span>金枪客系列</span>
-                        <span class="price-tag">180r</span>
-                    </div>
-                    <div class="price-item">
-                        <span>狙精系列</span>
-                        <span class="price-tag">160r</span>
-                    </div>
-                    <div class="price-item">
-                        <span>收集者系列</span>
-                        <span class="price-tag">300r</span>
-                    </div>
-                    <div class="price-item">
-                        <span>失去联系</span>
-                        <span class="price-tag">50r</span>
-                    </div>
-                    <div class="price-item">
-                        <span>单个任务收费</span>
-                        <span class="price-tag">30r</span>
-                    </div>
+                <div class="price-item">
+                    <span>28r</span>
+                    <span class="price-tag">保328w</span>
                 </div>
+                <div class="price-item">
+                    <span>58r</span>
+                    <span class="price-tag">保698w</span>
+                </div>
+                <div class="price-item">
+                    <span>88r</span>
+                    <span class="price-tag">保1100w</span>
+                </div>
+                <p class="mt-3">接长期价格私聊可优惠</p>
             </div>
         </div>
 
-        <div class="row justify-content-center">
-            <div class="col-md-8" data-aos="fade-up" data-aos-delay="500">
-                <div class="service-card">
-                    <h3 class="service-title">限时体验单</h3>
-                    <div class="price-item">
-                        <span>护航</span>
-                        <span class="price-tag">88r保328w</span>
-                    </div>
-                    <div class="price-item">
-                        <span>任意模式娱乐陪</span>
-                        <span class="price-tag">48r/h</span>
-                    </div>
-                    <div class="price-item">
-                        <span>代肝</span>
-                        <span class="price-tag">58r保1000w</span>
-                    </div>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-card">
+                <h3 class="service-title">3×3保险箱</h3>
+                <div class="price-item">
+                    <span>全任务</span>
+                    <span class="price-tag">1000r</span>
+                </div>
+                <div class="price-item">
+                    <span>金枪客系列</span>
+                    <span class="price-tag">180r</span>
+                </div>
+                <div class="price-item">
+                    <span>狙精系列</span>
+                    <span class="price-tag">160r</span>
+                </div>
+                <div class="price-item">
+                    <span>收集者系列</span>
+                    <span class="price-tag">300r</span>
+                </div>
+                <div class="price-item">
+                    <span>失去联系</span>
+                    <span class="price-tag">50r</span>
+                </div>
+                <div class="price-item">
+                    <span>单个任务收费</span>
+                    <span class="price-tag">30r</span>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row justify-content-center mt-4">
-            <div class="col-md-10" data-aos="fade-up" data-aos-delay="600">
-                <div class="rules">
-                    <h3 class="service-title">护航规则赔付保障</h3>
-                    <ol>
-                        <li>单局未完成目标或老板死亡需补单，小于保底15w则需再保一局</li>
-                        <li>老板不听打手指挥乱跑死亡不包赔</li>
-                        <li>打手必须给老板提供足量情绪价值，不得辱骂老板，若打手违反规则，可与客服售后投诉举报有奖</li>
-                        <li>不出大红不结单</li>
-                    </ol>
+    <div class="row justify-content-center">
+        <div class="col-md-8" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-card">
+                <h3 class="service-title">限时体验单</h3>
+                <div class="price-item">
+                    <span>护航</span>
+                    <span class="price-tag">88r保328w</span>
+                </div>
+                <div class="price-item">
+                    <span>任意模式娱乐陪</span>
+                    <span class="price-tag">48r/h</span>
+                </div>
+                <div class="price-item">
+                    <span>代肝</span>
+                    <span class="price-tag">58r保1000w</span>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row justify-content-center mt-4">
-            <div class="col-md-10" data-aos="fade-up" data-aos-delay="700">
-                <div class="rules">
-                    <h3 class="service-title">陪玩售后赔付保障</h3>
-                    <ol>
-                        <li>陪玩机密炸单一局，需给老板增加保底38w绝密68w</li>
-                        <li>下单进局十分钟内若对陪陪不满意可告知客服换人</li>
-                    </ol>
-                </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-10" data-aos="fade-up" data-aos-delay="600">
+            <div class="rules">
+                <h3 class="service-title">护航规则赔付保障</h3>
+                <ol>
+                    <li>单局未完成目标或老板死亡需补单，小于保底15w则需再保一局</li>
+                    <li>老板不听打手指挥乱跑死亡不包赔</li>
+                    <li>打手必须给老板提供足量情绪价值，不得辱骂老板，若打手违反规则，可与客服售后投诉举报有奖</li>
+                    <li>不出大红不结单</li>
+                </ol>
             </div>
         </div>
+    </div>
 
-        <div class="text-center mt-5">
-            <button id="contactBtn" class="cta-button animate__animated animate__pulse animate__infinite">立即联系客服</button>
-        </div>
-        
-        <!-- 微信二维码模态框 -->
-        <div id="wechatModal" class="wechat-modal">
-            <div class="wechat-modal-content animate__animated animate__fadeIn">
-                <button class="wechat-modal-close">&times;</button>
-                <h3 class="wechat-modal-title">扫码联系客服</h3>
-                <img src="wechat_code.png" alt="微信二维码" class="wechat-qrcode">
-                <p class="wechat-modal-text">微信号：<span class="wechat-id">dsr974</span></p>
-                <p class="wechat-modal-text">扫码或添加微信，立即咨询</p>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-10" data-aos="fade-up" data-aos-delay="700">
+            <div class="rules">
+                <h3 class="service-title">陪玩售后赔付保障</h3>
+                <ol>
+                    <li>陪玩机密炸单一局，需给老板增加保底38w绝密68w</li>
+                    <li>下单进局十分钟内若对陪陪不满意可告知客服换人</li>
+                </ol>
             </div>
         </div>
-    </main>
+    </div>
 
-    <footer class="footer text-center">
-        <div class="container">
-            <p>© 2025 招财电竞 - 专业三角洲行动陪玩服务</p>
-            <p>联系方式：<span class="glowing-text">QQ：2443714358</span></p>
+    <div class="text-center mt-5">
+        <button id="contactBtn" class="cta-button animate__animated animate__pulse animate__infinite">立即联系客服</button>
+    </div>
+
+    <!-- 微信二维码模态框 -->
+    <div id="wechatModal" class="wechat-modal">
+        <div class="wechat-modal-content animate__animated animate__fadeIn">
+            <button class="wechat-modal-close">&times;</button>
+            <h3 class="wechat-modal-title">扫码联系客服</h3>
+            <img src="wechat_code.png" alt="微信二维码" class="wechat-qrcode">
+            <p class="wechat-modal-text">微信号：<span class="wechat-id">dsr974</span></p>
+            <p class="wechat-modal-text">扫码或添加微信，立即咨询</p>
         </div>
-    </footer>
+    </div>
+</main>
 
-    <!-- 引入特效脚本 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-        // 初始化AOS动画库
-        AOS.init({
-            duration: 1000,
-            once: false
+<footer class="footer text-center">
+    <div class="container">
+        <p>© 2025 招财电竞 - 专业三角洲行动陪玩服务</p>
+        <p>联系方式：<span class="glowing-text">QQ：2443714358</span></p>
+    </div>
+</footer>
+
+<!-- 引入特效脚本 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+    // 初始化AOS动画库
+    AOS.init({
+        duration: 1000,
+        once: false
+    });
+
+    // 微信二维码模态框功能
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactBtn = document.getElementById('contactBtn');
+        const wechatModal = document.getElementById('wechatModal');
+        const closeBtn = document.querySelector('.wechat-modal-close');
+        const modalContent = document.querySelector('.wechat-modal-content');
+
+        // 打开模态框
+        contactBtn.addEventListener('click', function() {
+            wechatModal.classList.add('show');
+            setTimeout(() => {
+                modalContent.classList.add('animate__animated', 'animate__zoomIn');
+            }, 100);
         });
-        
-        // 微信二维码模态框功能
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactBtn = document.getElementById('contactBtn');
-            const wechatModal = document.getElementById('wechatModal');
-            const closeBtn = document.querySelector('.wechat-modal-close');
-            const modalContent = document.querySelector('.wechat-modal-content');
-            
-            // 打开模态框
-            contactBtn.addEventListener('click', function() {
-                wechatModal.classList.add('show');
-                setTimeout(() => {
-                    modalContent.classList.add('animate__animated', 'animate__zoomIn');
-                }, 100);
-            });
-            
-            // 关闭模态框
-            closeBtn.addEventListener('click', function() {
+
+        // 关闭模态框
+        closeBtn.addEventListener('click', function() {
+            modalContent.classList.remove('animate__zoomIn');
+            modalContent.classList.add('animate__zoomOut');
+
+            setTimeout(() => {
+                wechatModal.classList.remove('show');
+                modalContent.classList.remove('animate__zoomOut');
+            }, 500);
+        });
+
+        // 点击模态框外部关闭
+        wechatModal.addEventListener('click', function(e) {
+            if (e.target === wechatModal) {
                 modalContent.classList.remove('animate__zoomIn');
                 modalContent.classList.add('animate__zoomOut');
-                
+
                 setTimeout(() => {
                     wechatModal.classList.remove('show');
                     modalContent.classList.remove('animate__zoomOut');
                 }, 500);
-            });
-            
-            // 点击模态框外部关闭
-            wechatModal.addEventListener('click', function(e) {
-                if (e.target === wechatModal) {
-                    modalContent.classList.remove('animate__zoomIn');
-                    modalContent.classList.add('animate__zoomOut');
-                    
-                    setTimeout(() => {
-                        wechatModal.classList.remove('show');
-                        modalContent.classList.remove('animate__zoomOut');
-                    }, 500);
-                }
-            });
+            }
         });
+    });
 
-        // 初始化粒子效果
-        particlesJS("particles-js", {
-            particles: {
-                number: {
-                    value: 80,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: ["#ff3e3e", "#3e84ff", "#ffd700"]
-                },
-                shape: {
-                    type: "circle",
-                    stroke: {
-                        width: 0,
-                        color: "#000000"
-                    }
-                },
-                opacity: {
-                    value: 0.5,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: true,
-                        speed: 2,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
+    // 初始化粒子效果
+    particlesJS("particles-js", {
+        particles: {
+            number: {
+                value: 80,
+                density: {
                     enable: true,
-                    distance: 150,
-                    color: "#ffffff",
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
+                    value_area: 800
+                }
+            },
+            color: {
+                value: ["#ff3e3e", "#3e84ff", "#ffd700"]
+            },
+            shape: {
+                type: "circle",
+                stroke: {
+                    width: 0,
+                    color: "#000000"
+                }
+            },
+            opacity: {
+                value: 0.5,
+                random: true,
+                anim: {
+                    enable: true,
+                    speed: 1,
+                    opacity_min: 0.1,
+                    sync: false
+                }
+            },
+            size: {
+                value: 3,
+                random: true,
+                anim: {
                     enable: true,
                     speed: 2,
-                    direction: "none",
-                    random: true,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false,
-                    attract: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
+                    size_min: 0.1,
+                    sync: false
                 }
             },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: "grab"
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: "push"
-                    },
-                    resize: true
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: "#ffffff",
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: "none",
+                random: true,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+                attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
+            }
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: "grab"
                 },
-                modes: {
-                    grab: {
-                        distance: 140,
-                        line_linked: {
-                            opacity: 1
-                        }
-                    },
-                    push: {
-                        particles_nb: 4
-                    }
-                }
+                onclick: {
+                    enable: true,
+                    mode: "push"
+                },
+                resize: true
             },
-            retina_detect: true
-        });
-    </script>
+            modes: {
+                grab: {
+                    distance: 140,
+                    line_linked: {
+                        opacity: 1
+                    }
+                },
+                push: {
+                    particles_nb: 4
+                }
+            }
+        },
+        retina_detect: true
+    });
+</script>
 </body>
 </html>
